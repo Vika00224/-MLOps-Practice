@@ -31,11 +31,11 @@ df_train = pd.DataFrame(features).sample(frac=0.8, random_state=73)
 df_test = pd.DataFrame(features).drop(df_train.index)
 
 # Путь для сохранения файлов train
-path_train = Path('/home/olga/MLOps/train/train_data.csv')
+path_train = Path('D:\pycharm проекты/MLOps_Practice/train/train_data.csv')
 path_train.parent.mkdir(parents=True, exist_ok=True)
 
 # Путь для сохранения данных test
-path_test = Path('/home/olga/MLOps/test/test_data.csv')
+path_test = Path('D:\pycharm проекты/MLOps_Practice/test/test_data.csv')
 path_test.parent.mkdir(parents=True, exist_ok=True)
 
 # сохранение данных в csv
