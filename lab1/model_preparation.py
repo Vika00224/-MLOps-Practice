@@ -4,7 +4,7 @@ from sklearn.svm import SVR  # Метод опорных векторов для
 import pickle  # для сохранения модели
 
 model = SVR()
-path = '/home/olga/MLOps/train/train_data.csv'
+path = 'D:\pycharm проекты/MLOps_Practice/lab1/train/train_data.csv'
 
 df = data_preparation(path)
 X, y = df.drop(columns=['target']), df['target']
