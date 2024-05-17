@@ -15,9 +15,9 @@ print(df.info())
 print(df.describe())
 
 # создание каталогов для хранения данных
-os.makedirs('datasets', exist_ok=True)
+os.makedirs('data/datasets', exist_ok=True)
 
 # сохранение CSV файла
-df.to_csv('datasets/wine.csv', index=False)
+df.to_csv('data/datasets/wine.csv', index=False)
 
 print('Данные сохранены')
