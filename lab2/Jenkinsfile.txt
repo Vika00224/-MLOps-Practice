@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scmGit(branches: [[name: 'main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Vika00224/MLOps_Practice.git']])
+            }
+        }
+        stage('Download Data'){
+            steps{ 
+                sh 'python3 lab2/data_creation.py'
+            }
+        }
+        stage( 'Preprocess Data'){
+            steps{
+                sh 'python3 lab2/model_preprocessing.py'
+            }
+        }
+        stage('Train Model'){
+            steps{
+                sh 'python3 lab2/train.py'
+            }
+        }
+        stage('Test Model'){
+            steps{
+                sh 'python3 lab2/test.py'
+            }             
+        }
+    }
+    post {
+        always{
+            sh 'echo "Pipeline completed."'
+        }
+    }
+}
